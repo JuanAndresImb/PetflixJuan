@@ -20,11 +20,12 @@ html(lang="en")
                         img#profile(src='#' alt="profile")
                     ul 
                         li 
-                            a.profile(href="") Profile
+                            a.profile(href="/profile") Profile
                         li  
                             a.settings(href="") Settings
                         li 
-                            a.logOut(href="") Log out
+                            a.logOut(form.profilelogoutBox(action=`/logout`  method='post')
+      button.profileLogout(type='submit') logout ) Log out
             
             
                     
