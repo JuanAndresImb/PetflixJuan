@@ -14,15 +14,6 @@
   font-style: normal;
   font-display: swap;
 }
-/* POSITIONING */
-/* COLORS */
-@font-face {
-  font-family: "Montserrat-Light.ttf";
-  src: url(./images/fonts/Montserrat-Light.ttf);
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
 * {
   font-family: "Montserrat-Light.ttf", sans-serif;
 }
@@ -42,7 +33,11 @@ body {
 
 /* HEADER */
 .header {
-  background-color: #212529;
+  background-color: #000;
+  background-origin: border-box;
+  background-clip: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
   display: flex;
   position: fixed;
   margin: 0 auto;
@@ -111,55 +106,4 @@ input {
   color: green;
   border: none;
   font-size: 1.2rem;
-}
-
-.movie {
-  position: relative;
-  display: flex;
-  margin: auto;
-  top: 80px;
-  aspect-ratio: 16/9;
-  height: 90vh;
-  border: 4px green solid;
-  border-radius: 9px;
-  overflow: hidden;
-}
-
-.moviePoster {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: green;
-  display: block;
-  height: 100%;
-  width: 40%;
-  text-align: center;
-}
-.moviePoster .play {
-  margin: auto;
-  position: relative;
-  background: none;
-  border: none;
-  display: inline-block;
-  top: 25%;
-}
-.moviePoster .play .img {
-  display: block;
-  position: relative;
-  width: 50px;
-  height: 50px;
-  z-index: 1;
-}
-
-.movieInfo {
-  grid-area: info;
-  background-color: #6c757d;
-  height: 100%;
-  width: 60%;
-  box-sizing: border-box;
-  justify-content: space-around;
-}
-.movieInfo .info {
-  color: #212529;
-  padding: 2.5rem;
-}/*# sourceMappingURL=filmStyle.css.map */
+}/*# sourceMappingURL=header.css.map */
