@@ -42,7 +42,11 @@ body {
 
 /* HEADER */
 .header {
-  background-color: #212529;
+  background-color: #000;
+  background-origin: border-box;
+  background-clip: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
   display: flex;
   position: fixed;
   margin: 0 auto;
@@ -101,28 +105,16 @@ details ul li a {
 
 input {
   background-color: #212529;
-  color: green;
+  color: #198754;
   height: 50%;
   border-color: #198754;
 }
 
 .btn {
   background-color: #212529;
-  color: green;
+  color: #198754;
   border: none;
   font-size: 1.2rem;
-}
-
-/* PAGE */
-.main {
-  position: relative;
-  display: flex;
-  margin: auto;
-  height: auto;
-  width: 96vw;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 /* CATALOGUE ROWS */
@@ -132,14 +124,14 @@ input {
   margin: auto;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  background-color: #6c757d;
   height: 15rem;
   width: 100%;
   overflow-x: hidden;
   border-radius: 30px;
+  box-shadow: 10px 10px 5px;
 }
 .row h1 {
-  color: green;
+  color: #198754;
   font-size: 2rem;
   position: absolute;
   margin-top: -3rem;
@@ -148,7 +140,6 @@ input {
 
 /* CAROUSEL */
 .carousel-container {
-  background-color: green;
   display: flex;
   position: relative;
   flex-direction: row;
@@ -168,7 +159,11 @@ input {
   height: 100%;
   width: 4rem;
   font-size: 2rem;
-  background-color: green;
+  background-color: #000;
+  background-origin: border-box;
+  background-clip: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
   color: white;
   border: none;
   overflow: hidden;
@@ -181,15 +176,15 @@ input {
 .carousel-container .carouselBtn.next {
   right: 0;
 }
+.carousel-container .carouselBtn:hover {
+  background-color: #198754;
+}
 
 .carousel-slide {
   position: relative;
   display: flex;
-  background-color: #000;
-  background-origin: border-box;
-  background-clip: border-box;
-  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
-  background-repeat: repeat;
+  background-color: #212529;
+  background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
   flex-direction: row;
@@ -206,7 +201,7 @@ input {
 /* MOVIE PANELS */
 .panel {
   position: relative;
-  border: 2px green solid;
+  border: 2px #198754 solid;
   border-radius: 10px;
   margin: 0.9rem;
   justify-items: flex-start;
@@ -219,8 +214,19 @@ input {
 
 .panel__video {
   width: 100%;
-  background: red;
   padding-top: 56.25%;
+}
+
+/* PAGE */
+.main {
+  position: relative;
+  display: flex;
+  margin: auto;
+  height: auto;
+  width: 96vw;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* BIG WINDOWS */
@@ -228,18 +234,20 @@ input {
   background-color: #212529;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  border-radius: 36px;
   position: relative;
   flex-direction: row;
-  height: 50rem;
+  height: 100%;
   width: 100%;
   overflow: hidden;
+  box-shadow: 10px 10px 5px;
 }
 .content .content#categories {
   border: #198754 solid 2px;
   border-radius: 15px;
 }
 .content h1 {
-  color: green;
+  color: #198754;
   font-size: 3rem;
   margin: 3rem;
 }
@@ -248,8 +256,6 @@ input {
 .cardContainer {
   position: relative;
   display: flex;
-  border-top: green solid 3px;
-  border-bottom: green solid 3px;
   height: 40rem;
   width: 95rem;
   margin: auto;
@@ -265,23 +271,23 @@ input {
   flex-direction: column;
   border: none;
   box-shadow: 10px 10px 5px;
+  border-radius: 10px;
   top: auto;
   background-color: #f0f0f0;
   cursor: pointer;
-  border-radius: 2px;
   width: 11rem;
   height: 35rem;
   white-space: nowrap;
   z-index: 1;
   margin-left: 0.5rem;
-  transition: transform 2s ease-in-out;
 }
 .cardContainer .card:hover {
+  transition: transform 2s ease-in;
   transform: scaleX(1.1) scaleY(1.05);
   z-index: 2;
 }
 .cardContainer .card h3 {
-  color: green;
+  color: #198754;
   margin: 2rem;
   justify-content: end;
   position: absolute;
@@ -294,26 +300,42 @@ input {
      object-fit: cover;
 }
 
+.cardContainer:hover .card {
+  filter: blur(2px) grayscale(0.8);
+}
+
+.cardContainer:hover .card:hover {
+  filter: none;
+}
+
 .slider-controls {
   position: absolute;
   display: flex;
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  top: -20%;
+  bottom: 0;
   margin: auto;
+  border: none;
+  box-sizing: content-box;
 }
 .slider-controls button {
-  background-color: black;
-  border-top: rgb(0, 0, 0) solid 3px;
-  border-bottom: rgb(0, 0, 0) solid 3px;
-  opacity: 0.5;
-  color: #fff;
+  background-color: #000;
+  background-origin: border-box;
+  background-clip: border-box;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
+  color: #6c757d;
+  font-size: 2rem;
+  width: 4rem;
+  height: 100%;
+  box-sizing: border-box;
+  border: none;
   cursor: pointer;
-  font-size: 18px;
   transition: background-color 0.3s ease;
   padding: 5px 20px;
 }
 .slider-controls button:hover {
-  background-color: green;
+  background-color: #198754;
+  color: #212529;
 }/*# sourceMappingURL=homeStyle.css.map */
