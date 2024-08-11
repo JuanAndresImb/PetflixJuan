@@ -1,6 +1,6 @@
 const express = require("express");
 const check = express.Router();
-const Users = require("../models").Users;
+const { Users, ProfileUser, ProfileIcon } = require("../models");
 
 function asyncHandler(cb) {
   return async (req, res, next) => {
@@ -46,6 +46,42 @@ check.post(
     } else {
       const text = "";
       return res.send(text);
+    }
+  })
+);
+
+check.post(
+  "/profilecheck/:id",
+  asyncHandler(async (req, res) => {
+    if (req.params.id.slice(0, -1) == "profile") {
+      console.log(req.body);
+      const profileNumber = parseInt(req.params.id.slice(-1)) - 1;
+
+      const userNameDB = await Users.findOne({
+        where: { username: req.session.userid },
+      });
+      const profileAll = await ProfileUser.findAll({
+        where: { userId: userNameDB.id },
+      });
+
+      const profileIcon = await ProfileIcon.findOne({
+        where: { imgName: req.body.selectedImage },
+      });
+
+      const profile = profileAll[profileNumber];
+
+      const adultCheck = req.body.adultContents == "on" ? true : false;
+
+      profile.set({
+        profileName: req.body.profileName,
+        password: parseInt(req.body.profilePassword),
+        profileIconId: profileIcon.idProfileIcon,
+        ageRestriction: adultCheck,
+      });
+
+      await profile.save();
+
+      return res.redirect("/profile");
     }
   })
 );

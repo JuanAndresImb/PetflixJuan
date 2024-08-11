@@ -148,6 +148,7 @@ input {
   height: 25%;
   display: flex;
   flex-direction: row;
+  max-width: 100%;
 }
 
 .profileForm {
@@ -160,7 +161,7 @@ input {
 .profileBox {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  max-height: 100%;
 }
 
 .profileIconSmall {
@@ -236,10 +237,19 @@ input {
 }
 
 .imgMainProfile {
-  max-width: 150px;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: 100%;
+  height: auto;
 }
 
 .newsletterDiv {
   display: flex;
   flex-direction: row;
+}
+
+.profileIconBox {
+  max-height: 150px;
+  padding-right: 80%;
 }

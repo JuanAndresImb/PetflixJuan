@@ -42,18 +42,60 @@ profile.get(
       raw: true,
     });
 
-    //const profileGetAll = await ProfileUser.findAll({
-    //  where: { userId: userNameDB.id },
-    //});
+    const profileGetAll = await ProfileUser.findAll({
+      where: { userId: userNameDB.id },
+      include: {
+        model: ProfileIcon,
+        attributes: ["imgName"], // On ne récupère que le champ imgName
+      },
+      raw: true,
+    });
 
-    console.log(userNameDB.newsletter);
+    const newsletter = userNameDB.newsletter ? true : false;
+
+    const profiles = [
+      {
+        id: "profile1",
+        color: "blueviolet",
+        icon: profileGetAll[0]["ProfileIcon.imgName"],
+        name: profileGetAll[0].profileName,
+        adultContents: profileGetAll[0].ageRestriction,
+        created: profileGetAll[0].created ? "update" : "create",
+      },
+      {
+        id: "profile2",
+        color: "green",
+        icon: profileGetAll[1]["ProfileIcon.imgName"],
+        name: profileGetAll[1].profileName,
+        adultContents: profileGetAll[1].ageRestriction,
+        created: profileGetAll[1].created ? "update" : "create",
+      },
+      {
+        id: "profile3",
+        color: "red",
+        icon: profileGetAll[2]["ProfileIcon.imgName"],
+        name: profileGetAll[2].profileName,
+        adultContents: profileGetAll[2].ageRestriction,
+        created: profileGetAll[2].created ? "update" : "create",
+      },
+      {
+        id: "profile4",
+        color: "orange",
+        icon: profileGetAll[3]["ProfileIcon.imgName"],
+        name: profileGetAll[3].profileName,
+        adultContents: profileGetAll[3].ageRestriction,
+        created: profileGetAll[3].created ? "update" : "create",
+      },
+    ];
 
     return res.render("profile", {
       profileUser: req.session.userid,
       username: userNameDB.username,
       email: userNameDB.email,
       icons: iconNamesArray,
-      iconProfileMain: mainProfileWithIcon["ProfileIcon.imgName"],
+      iconProfile1: mainProfileWithIcon["ProfileIcon.imgName"],
+      newsletter: newsletter,
+      profiles: profiles,
     });
   })
 );

@@ -20,6 +20,7 @@ module.exports = (sequelize, Users, ProfileIcon) => {
       profileNumber: Sequelize.INTEGER,
       ageRestriction: Sequelize.BOOLEAN,
       password: Sequelize.STRING,
+      created: Sequelize.BOOLEAN,
       profileIconId: {
         type: Sequelize.INTEGER,
         references: {
