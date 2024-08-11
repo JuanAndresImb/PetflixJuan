@@ -54,7 +54,7 @@ app.use(
     cookie: {
       sameSite: "strict",
       secure: false, //http vs https
-      maxAge: /*24 * 60 **/ 60 * 1000, //durée de vie de la session
+      maxAge: 24 * 60 * 60 * 1000, //durée de vie de la session
     },
   })
 );
@@ -97,7 +97,8 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   res.locals.error = err;
-  res.status(err.status);
+  const status = err.status || 500;
+  res.status(status);
   res.render("error");
 });
 
