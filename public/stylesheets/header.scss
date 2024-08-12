@@ -67,7 +67,6 @@ details {
 
     img {
       @include flexInFlex;
-      margin: auto;
       right: 2rem;
       height: 60px;
       width: 60px;
@@ -100,4 +99,15 @@ input {
   @include greenItem;
   border: none;
   font-size: 1.2rem;
+}
+
+/* FOOTER */
+
+footer {
+  @include blackBg;
+  position: absolute;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  height: 20rem;
 }
