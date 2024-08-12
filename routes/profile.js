@@ -130,24 +130,46 @@ profile.post(
       where: { imgName: req.body.selectedImage },
     });
 
+    console.log(icons);
+
     const userNameDB = await Users.findOne({
       where: { username: req.session.register },
     });
 
     const ageRestriction = req.body.adultContents == "on" ? true : false;
-    const createUserProfile = await ProfileUser.create({
+    const createUserProfile1 = await ProfileUser.create({
       profileName: req.body.profilename,
       profileNumber: 1,
       ageRestriction: ageRestriction,
       password: req.body.password,
-      profileIconId: icons.profileIconId,
+      profileIconId: icons.idProfileIcon,
       created: true,
       userId: userNameDB.id,
     });
 
-    const createUserProfile1 = await ProfileUser.create({
+    const createUserProfile2 = await ProfileUser.create({
       profileName: "profile name",
-      profileNumber: i,
+      profileNumber: 2,
+      ageRestriction: false,
+      password: "",
+      profileIconId: 1,
+      created: false,
+      userId: userNameDB.id,
+    });
+
+    const createUserProfile3 = await ProfileUser.create({
+      profileName: "profile name",
+      profileNumber: 3,
+      ageRestriction: false,
+      password: "",
+      profileIconId: 1,
+      created: false,
+      userId: userNameDB.id,
+    });
+
+    const createUserProfile4 = await ProfileUser.create({
+      profileName: "profile name",
+      profileNumber: 4,
       ageRestriction: false,
       password: "",
       profileIconId: 1,
