@@ -8,6 +8,17 @@
 /* POSITIONING */
 /* COLORS */
 /* CATALOGUE ROWS */
+h1 {
+  color: #198754;
+  top: 3.5rem;
+  font-size: 2rem;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+  text-align: left;
+  left: 5rem;
+}
+
 .row {
   position: relative;
   display: flex;
@@ -20,13 +31,6 @@
   border-radius: 30px;
   border: solid 2px #6c757d;
   box-shadow: 10px 10px 5px;
-}
-.row h1 {
-  color: #198754;
-  font-size: 2rem;
-  position: absolute;
-  margin-top: -3rem;
-  white-space: nowrap;
 }
 
 /* CAROUSEL */
@@ -47,6 +51,7 @@
   justify-content: space-between;
   top: 50%;
   transform: translateY(-50%);
+  transition: background-color 0.5s ease-in-out;
   height: 100%;
   width: 4rem;
   font-size: 2rem;
@@ -74,7 +79,6 @@
 .carousel-slide {
   position: relative;
   display: flex;
-  background-color: #212529;
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;

@@ -98,6 +98,8 @@ details ul li a {
 
 input {
   background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
   color: #198754;
   height: 50%;
   border-color: #198754;
@@ -105,6 +107,8 @@ input {
 
 .btn {
   background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
   color: #198754;
   border: none;
   font-size: 1.2rem;

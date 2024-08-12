@@ -36,6 +36,8 @@
 }
 @mixin darkBg {
   background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
 }
 
 @mixin greenBg {
