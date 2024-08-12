@@ -77,6 +77,8 @@ details summary img {
   position: relative;
   display: flex;
   margin: auto;
+  margin: auto;
+  right: 2rem;
   height: 60px;
   width: 60px;
   border: solid red;

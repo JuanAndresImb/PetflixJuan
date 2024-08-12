@@ -1,3 +1,5 @@
+@import "mixins";
+
 /* CATALOGUE ROWS */
 
 .row {
@@ -7,6 +9,7 @@
   width: 100%;
   overflow-x: hidden;
   border-radius: 30px;
+  border: solid 2px #6c757d;
   box-shadow: 10px 10px 5px;
 
   h1 {
