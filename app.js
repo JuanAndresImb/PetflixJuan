@@ -47,7 +47,7 @@ const {
 //debut de l'APP
 
 const app = express();
-app.use(
+ app.use(
   session({
     secret: "iciChaineCharacteresCryptage", // a changer régulierement
     resave: false,
@@ -55,10 +55,10 @@ app.use(
     cookie: {
       sameSite: "strict",
       secure: false, //http vs https
-      maxAge: /*24 * 60 **/ 60 * 1000, //durée de vie de la session
+      maxAge:  60 * 60 * 1000, //ici a modifier par ça , la durée de la session est de 1 H 
     },
   })
-);
+); 
 
 //app.use((req, res, next) => {
 //console.log(req.session);
