@@ -66,6 +66,8 @@ details {
 
     img {
       @include flexInFlex;
+      margin: auto;
+      right: 2rem;
       height: 60px;
       width: 60px;
       border: solid red;
