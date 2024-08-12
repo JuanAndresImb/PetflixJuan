@@ -105,4 +105,68 @@ profile.post(
   asyncHandler(async (req, res) => {})
 );
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+profile.get(
+  "/profilecreate",
+  asyncHandler(async (req, res) => {
+    const icons = await ProfileIcon.findAll({
+      attributes: ["imgName"],
+      raw: true,
+    });
+
+    const iconNamesArray = icons.map((icon) => icon.imgName);
+
+    return res.render("profileCreate", { icons: iconNamesArray });
+  })
+);
+
+profile.post(
+  "/profilecreate",
+  asyncHandler(async (req, res) => {
+    console.log(req.body);
+
+    const icons = await ProfileIcon.findOne({
+      where: { imgName: req.body.selectedImage },
+    });
+
+    const userNameDB = await Users.findOne({
+      where: { username: req.session.register },
+    });
+
+    const ageRestriction = req.body.adultContents == "on" ? true : false;
+    const createUserProfile = await ProfileUser.create({
+      profileName: req.body.profilename,
+      profileNumber: 1,
+      ageRestriction: ageRestriction,
+      password: req.body.password,
+      profileIconId: icons.profileIconId,
+      created: true,
+      userId: userNameDB.id,
+    });
+
+    const createUserProfile1 = await ProfileUser.create({
+      profileName: "profile name",
+      profileNumber: i,
+      ageRestriction: false,
+      password: "",
+      profileIconId: 1,
+      created: false,
+      userId: userNameDB.id,
+    });
+  })
+);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+profile.get(
+  "/profileselect",
+  asyncHandler(async (req, res) => {})
+);
+
+profile.post(
+  "/profileselect/:id",
+  asyncHandler(async (req, res) => {})
+);
+
 module.exports = profile;

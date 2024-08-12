@@ -90,7 +90,8 @@ router.post(
       password: hash,
       newsletter: newsletterSubscription,
     });
-    return res.redirect("/");
+    req.session.register = username;
+    return res.redirect("/profilecreate");
   })
 );
 
