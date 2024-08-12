@@ -166,7 +166,6 @@ input {
 
 .profileIconSmall {
   display: flex;
-  aspect-ratio: 1/1;
   height: 100%;
 }
 
@@ -252,4 +251,13 @@ input {
 .profileIconBox {
   max-height: 150px;
   padding-right: 80%;
+}
+
+.profilelogoutBox {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: auto;
+  height: auto;
+  display: contents;
 }

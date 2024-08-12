@@ -125,7 +125,7 @@ document.querySelectorAll(".dropbtn").forEach((button) => {
 }); // definir de force le type de btn dans la form pour ne pas submit de base
 
 document.addEventListener("DOMContentLoaded", function () {
-  const sections = document.querySelectorAll("section");
+  const sections = document.querySelectorAll("section.profileSection");
 
   sections.forEach((section) => {
     const dropdownItems = section.querySelectorAll(".dropdown-item");

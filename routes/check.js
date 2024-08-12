@@ -72,12 +72,59 @@ check.post(
 
       const adultCheck = req.body.adultContents == "on" ? true : false;
 
-      profile.set({
-        profileName: req.body.profileName,
-        password: parseInt(req.body.profilePassword),
-        profileIconId: profileIcon.idProfileIcon,
-        ageRestriction: adultCheck,
+      // profile.set({
+      //   profileName: req.body.profileName,
+      //   password: parseInt(req.body.profilePassword),
+      //   profileIconId: profileIcon.idProfileIcon,
+      //   ageRestriction: adultCheck,
+      // });
+
+      // Mettre à jour les champs seulement si une valeur est fournie
+      if (req.body.profileName && req.body.profileName.trim() !== "") {
+        profile.profileName = req.body.profileName;
+      }
+
+      if (req.body.profilePassword && req.body.profilePassword.trim() !== "") {
+        profile.password = parseInt(req.body.profilePassword);
+      }
+
+      profile.profileIconId = profileIcon.idProfileIcon;
+
+      profile.ageRestriction = adultCheck;
+
+      await profile.save();
+
+      return res.redirect("/profile");
+    }
+
+    if (req.params.id == "main") {
+      console.log(req.body);
+      const userNameDB = await Users.findOne({
+        where: { username: req.session.userid },
       });
+
+      if (req.body.username && req.body.username.trim() !== "") {
+        userNameDB.username = req.body.username;
+      }
+
+      if (req.body.email && req.body.email.trim() !== "") {
+        userNameDB.email = req.body.email;
+      }
+
+      const newsletter = req.body.newsletter == "on" ? true : false;
+      userNameDB.newsletter = newsletter;
+
+      await userNameDB.save();
+
+      const profileAll = await ProfileUser.findAll({
+        where: { userId: userNameDB.id },
+      });
+      const profile = profileAll[0];
+      const profileIcon = await ProfileIcon.findOne({
+        where: { imgName: req.body.selectedImage },
+      });
+
+      profile.profileIconId = profileIcon.idProfileIcon;
 
       await profile.save();
 

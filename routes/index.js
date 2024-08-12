@@ -83,7 +83,7 @@ router.post(
     console.log(req.body);
     const { username, password, email, newsletter } = req.body;
     const hash = await bcrypt.hash(password, 12);
-    const newsletterSubscription = !!newsletter && newsletter === 'on';
+    const newsletterSubscription = !!newsletter && newsletter === "on";
     const user = await Users.create({
       username: username,
       email: email,
@@ -91,6 +91,19 @@ router.post(
       newsletter: newsletterSubscription,
     });
     return res.redirect("/");
+  })
+);
+
+router.post(
+  "/logout",
+  asyncHandler(async (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        return res.redirect("/");
+      }
+      res.clearCookie("connect.sid");
+      res.redirect("/");
+    });
   })
 );
 

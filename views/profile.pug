@@ -17,29 +17,33 @@ main
     button.profileOption(onclick='ongletChange(1)')
       | security
     button.profileOption(onclick='ongletChange(2)') users
-    button.profileLogout logout
+    form.profilelogoutBox(action=`/logout`  method='post')
+      button.profileLogout(type='submit') logout
   section.boxMenuProfile
     // acount section
     section#profileAccount.profileInData(style='display: block')
-      .profileDivInData
-        label(for='username') Username
-        input(type='text' name='username' placeholder=`${username}`)
-        label(for='username') email
-        input(type='email' name='email' placeholder=`${email}`)
-        .newsletterDiv
-          label(for='newsletter') newsletter
-          input#newsletter(type='checkbox' name='newsletter' checked=!!newsletter)
-        .profileIconSmall
-          .dropdown
-            .profileIconBox
-              button.dropbtn(type='button' data-tooltip-id='tooltip5')
-                img.imgMainProfile(src=`./images/animal_icon/`+ iconProfile1 alt='icon')
-            #tooltip5.tooltip(style='display: none')
-              .dropdown-content
-                each icon in icons
-                  .dropdown-item(data-image-name=icon)
-                    img(src=`./images/animal_icon/${icon}` alt='icon')
-            input#selectedImage5(type='hidden' name='selectedImage' value=`${iconProfile1}`)
+      form.profileFormMain(action=`/profilecheck/main`  method='post')
+        .profileDivInData
+          label(for='username') Username
+          input(type='text' name='username' placeholder=`${username}`)
+          label(for='username') email
+          input(type='email' name='email' placeholder=`${email}`)
+          .newsletterDiv
+            label(for='newsletter') newsletter
+            input#newsletter(type='checkbox' name='newsletter' checked=!!newsletter)
+          .profileIconSmall
+            section(class='profileSection')
+              .dropdown
+                .profileIconBox
+                  button.dropbtn(type='button' data-tooltip-id='tooltip5')
+                    img.imgMainProfile(src=`./images/animal_icon/`+ iconProfile1 alt='icon')
+                #tooltip5.tooltip(style='display: none')
+                  .dropdown-content
+                    each icon in icons
+                      .dropdown-item(data-image-name=icon)
+                        img(src=`./images/animal_icon/${icon}` alt='icon')
+                input#selectedImage5(type='hidden' name='selectedImage' value=`${iconProfile1}`)
+          button(type='submit') Send      
     // security section
     section#profileSecurity.profileInData(style='display: none')
       .profileDivInData
