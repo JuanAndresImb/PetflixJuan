@@ -61,6 +61,7 @@ body {
   display: flex;
   margin: auto;
   white-space: nowrap;
+  justify-content: space-around;
   margin-right: 2.5rem;
 }
 

@@ -42,9 +42,9 @@ body {
 
 #logo img {
   position: relative;
-
   display: block;
   margin-left: 2rem;
+
   height: 60px;
 }
 
@@ -53,6 +53,7 @@ body {
 #menu {
   @include flexInFlex;
   white-space: nowrap;
+  justify-content: space-around;
   margin-right: 2.5rem;
 }
 
