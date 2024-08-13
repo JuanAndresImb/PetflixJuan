@@ -329,7 +329,7 @@ h1 {
   height: 100%;
   transition: 0.8s ease;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .card:hover img,
@@ -340,6 +340,7 @@ h3 {
 
 .cardContainer:hover .card:not(:hover) {
   filter: blur(2px) grayscale(0.8);
+  transition: 1s ease;
   z-index: 1;
 }
 
@@ -373,4 +374,4 @@ h3 {
 .slider-controls button:hover {
   background-color: #198754;
   color: #212529;
-}/*# sourceMappingURL=homeStyle.css.map */
+} /*# sourceMappingURL=homeStyle.css.map */

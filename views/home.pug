@@ -24,8 +24,7 @@ html(lang="en")
                         li  
                             a.settings(href="") Settings
                         li 
-                            a.logOut(form.profilelogoutBox(action=`/logout`  method='post')
-      button.profileLogout(type='submit') logout ) Log out
+                            a.logOut(href="logout") Log out
             
             
                     
@@ -38,30 +37,15 @@ html(lang="en")
             
             h1 My Selection
             .row#mylist
-                
                 .carousel-container
                     button(class="carouselBtn prev") &lt;
                     .carousel-slide
-                        
-                        
+                        each video in videos    
                             .panel
-                                .video(controls width="100%")
-                                    
-                            .panel 
-                            .panel
-                            .panel
-                            .panel 
-                            .panel
-                            .panel
-                            .panel 
-                            .panel
-                            .panel
-                            .panel 
-                            .panel
-                            .panel
-                            .panel 
-                            .panel
-                  
+                                video(src=video.key controls)
+                                h3= video.name
+                                p= video.type
+                                p= video.official  
                     button(class="carouselBtn next") &gt;
 
 
@@ -74,21 +58,7 @@ html(lang="en")
                         
                         .panel
                             .video
-                                
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                     
                   
                     button(class="carouselBtn next") &gt;
 
@@ -102,20 +72,7 @@ html(lang="en")
                         .panel
                             .video
                                 
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                     
                   
                     button(class="carouselBtn next") &gt;
 
@@ -129,20 +86,7 @@ html(lang="en")
                         .panel
                             .video
                                 
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                    
                   
                     button(class="carouselBtn next") &gt;
 
@@ -154,22 +98,7 @@ html(lang="en")
                         
                         .panel
                             
-                                
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                  
+                   
                     button(class="carouselBtn next") &gt;
 
             .content#categories
@@ -235,13 +164,14 @@ html(lang="en")
                         h3 War
                         img(src='./images/genres/war.jpg', alt='War')
                 .slider-controls
-                     button.prev-btn &lt;
-                     button.next-btn &gt;
+                    button.prev-btn &lt;
+                    button.next-btn &gt;
                      
                     
                     
                
 
-
+  
     script(src="./javascripts/carousel.js")
     script(src="./javascripts/slider.js")
+    
