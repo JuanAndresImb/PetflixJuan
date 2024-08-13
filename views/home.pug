@@ -42,7 +42,7 @@ html(lang="en")
                     .carousel-slide
                         each video in videos    
                             .panel
-                                video(src=video.key controls)
+                                video(src=video.key)
                                 h3= video.name
                                 p= video.type
                                 p= video.official  
