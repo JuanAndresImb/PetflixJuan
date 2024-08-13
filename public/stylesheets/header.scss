@@ -44,11 +44,11 @@ body {
   position: relative;
   display: block;
   margin-left: 2rem;
-
+  top: 0.7rem;
   height: 60px;
 }
 
-// HEADER RIGHT SIDE
+/* RIGHT SIDE */
 
 #menu {
   @include flexInFlex;
@@ -57,10 +57,12 @@ body {
   margin-right: 2.5rem;
 }
 
+/* PROFILE */
+
 details {
   position: absolute;
-  right: 15rem;
-  top: -1.3rem;
+  margin-right: 23rem;
+  top: -0.8rem;
   list-style: none;
   summary {
     list-style: none;
@@ -70,7 +72,7 @@ details {
       right: 2rem;
       height: 60px;
       width: 60px;
-      border: solid red;
+      border: solid #198754;
     }
   }
   ul {
@@ -80,25 +82,66 @@ details {
     text-align: justify;
     border-radius: 9px;
     padding: 1rem;
+    right: 1.8rem;
     li a {
       text-decoration: none;
-      color: green;
+      @include greenItem;
     }
   }
 }
 
-input {
+/* SEARCH */
+
+.search-container {
+  min-width: 300px;
+  position: relative;
+  right: 1rem;
+}
+
+.search-container:focus {
+  border: none;
+}
+
+#search {
   @include darkBg;
   @include greenItem;
   height: 50%;
-  border-color: #198754;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.2rem;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
 }
 
-.btn {
+/* .btn {
   @include darkBg;
   @include greenItem;
   border: none;
   font-size: 1.2rem;
+} */
+
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  max-height: 150px;
+  max-width: 300px;
+  left: 5px;
+  border: 1.5px solid black;
+  border-top: none;
+  @include darkBg;
+  border-radius: 0 0 4px 4px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+.suggestion-item {
+  padding: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  @include greenItem;
+}
+.suggestion-item:hover {
+  @include greenBg;
+  @include darkItem;
 }
 
 /* FOOTER */

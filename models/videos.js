@@ -9,11 +9,11 @@ module.exports = (sequelize, DataTypes) => {
   }
   Videos.init(
     {
-      title: {
+      name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      url: {
+      key: {
         type: DataTypes.STRING,
         allowNull: false,
       },

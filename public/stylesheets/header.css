@@ -53,9 +53,11 @@ body {
   position: relative;
   display: block;
   margin-left: 2rem;
+  top: 0.7rem;
   height: 60px;
 }
 
+/* RIGHT SIDE */
 #menu {
   position: relative;
   display: flex;
@@ -65,10 +67,11 @@ body {
   margin-right: 2.5rem;
 }
 
+/* PROFILE */
 details {
   position: absolute;
-  right: 15rem;
-  top: -1.3rem;
+  margin-right: 23rem;
+  top: -0.8rem;
   list-style: none;
 }
 details summary {
@@ -81,7 +84,7 @@ details summary img {
   right: 2rem;
   height: 60px;
   width: 60px;
-  border: solid red;
+  border: solid #198754;
 }
 details ul {
   list-style: none;
@@ -90,28 +93,69 @@ details ul {
   text-align: justify;
   border-radius: 9px;
   padding: 1rem;
+  right: 1.8rem;
 }
 details ul li a {
   text-decoration: none;
-  color: green;
+  color: #198754;
 }
 
-input {
+/* SEARCH */
+.search-container {
+  min-width: 300px;
+  position: relative;
+  right: 1rem;
+}
+
+.search-container:focus {
+  border: none;
+}
+
+#search {
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
   color: #198754;
   height: 50%;
-  border-color: #198754;
+  width: 100%;
+  padding: 8px;
+  font-size: 1.2rem;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
 }
 
-.btn {
+/* .btn {
+  @include darkBg;
+  @include greenItem;
+  border: none;
+  font-size: 1.2rem;
+} */
+.suggestions-list {
+  position: absolute;
+  top: 100%;
+  max-height: 150px;
+  max-width: 300px;
+  left: 5px;
+  border: 1.5px solid black;
+  border-top: none;
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
-  color: #198754;
-  border: none;
+  border-radius: 0 0 4px 4px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.suggestion-item {
+  padding: 8px;
   font-size: 1.2rem;
+  cursor: pointer;
+  color: #198754;
+}
+
+.suggestion-item:hover {
+  background-color: #198754;
+  color: #212529;
 }
 
 /* FOOTER */
