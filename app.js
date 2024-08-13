@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const fs = require("node:fs");
 const path = require("path");
 const session = require("express-session");
-const sqlite3 = require('sqlite3').verbose();
+const sqlite3 = require("sqlite3").verbose();
 
 //creation database :
 const {
@@ -47,7 +47,7 @@ const {
 //debut de l'APP
 
 const app = express();
- app.use(
+app.use(
   session({
     secret: "iciChaineCharacteresCryptage", // a changer régulierement
     resave: false,
@@ -55,10 +55,10 @@ const app = express();
     cookie: {
       sameSite: "strict",
       secure: false, //http vs https
-      maxAge:  60 * 60 * 1000, //ici a modifier par ça , la durée de la session est de 1 H 
+      maxAge: 60 * 60 * 1000, //ici a modifier par ça , la durée de la session est de 1 H
     },
   })
-); 
+);
 
 //app.use((req, res, next) => {
 //console.log(req.session);
@@ -98,7 +98,8 @@ app.use((req, res, next) => {
 
 app.use((err, req, res, next) => {
   res.locals.error = err;
-  res.status(err.status);
+  const status = err.status || 500;
+  res.status(status);
   res.render("error");
 });
 
