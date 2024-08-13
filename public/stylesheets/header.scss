@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  src: url(./images/fonts/Montserrat-Light.ttf);
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,8 @@
 
 body {
   background-color: #212529;
-  background-image: url(../public/images/backgroundTextures/3px-tile.png);
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+  background-repeat: repeat;
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -27,7 +28,7 @@ body {
 /* HEADER */
 
 .header {
-  @include darkBg;
+  @include blackBg;
   display: flex;
   position: fixed;
   margin: 0 auto;
@@ -43,6 +44,7 @@ body {
   position: relative;
   display: block;
   margin-left: 2rem;
+
   height: 60px;
 }
 
@@ -51,6 +53,7 @@ body {
 #menu {
   @include flexInFlex;
   white-space: nowrap;
+  justify-content: space-around;
   margin-right: 2.5rem;
 }
 
@@ -64,6 +67,7 @@ details {
 
     img {
       @include flexInFlex;
+      right: 2rem;
       height: 60px;
       width: 60px;
       border: solid red;
@@ -95,4 +99,15 @@ input {
   @include greenItem;
   border: none;
   font-size: 1.2rem;
+}
+
+/* FOOTER */
+
+footer {
+  @include blackBg;
+  position: absolute;
+  color: white;
+  bottom: 0;
+  width: 100%;
+  height: 20rem;
 }

@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const fs = require("node:fs");
 const path = require("path");
 const session = require("express-session");
+const sqlite3 = require("sqlite3").verbose();
 
 //creation database :
 const {
@@ -54,7 +55,7 @@ app.use(
     cookie: {
       sameSite: "strict",
       secure: false, //http vs https
-      maxAge: 24 * 60 * 60 * 1000, //durée de vie de la session
+      maxAge: 60 * 60 * 1000, //ici a modifier par ça , la durée de la session est de 1 H
     },
   })
 );

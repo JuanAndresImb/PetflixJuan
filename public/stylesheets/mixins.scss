@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Montserrat-Light.ttf";
-  src: url(../public/images/fonts/Montserrat-Light.ttf);
+  src: url(./images/fonts/Montserrat-Light.ttf);
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -36,14 +36,18 @@
 }
 @mixin darkBg {
   background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
 }
 
 @mixin greenBg {
-  background-color: green;
+  background-color: #198754;
 }
 
 @mixin secondaryBg {
   background-color: #6c757d;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
 }
 
 @mixin darkItem {
@@ -51,9 +55,9 @@
 }
 
 @mixin greenItem {
-  color: green;
+  color: #198754;
 }
 
-@mixin Blu {
-  color: blue;
+@mixin secondaryItem {
+  color: #6c757d;
 }
