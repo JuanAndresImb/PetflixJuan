@@ -132,6 +132,19 @@ router.post(
   })
 );
 
+router.get(
+  "/logout",
+  asyncHandler(async (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        return res.redirect("/");
+      }
+      res.clearCookie("connect.sid");
+      res.redirect("/");
+    });
+  })
+);
+
 router.post(
   "/logout",
   asyncHandler(async (req, res) => {
