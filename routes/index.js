@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { Users, ProfileUser } = require("../models");
+const { Users, ProfileUser, ProfileIcon } = require("../models");
 const bcrypt = require("bcrypt");
 
 //req.session.role = 'admin';
@@ -135,7 +135,7 @@ router.post(
 router.get(
   "/logout",
   asyncHandler(async (req, res) => {
-    req.session.destroy((err) => {
+    req.session.destroy(err => {
       if (err) {
         return res.redirect("/");
       }
@@ -148,7 +148,7 @@ router.get(
 router.post(
   "/logout",
   asyncHandler(async (req, res) => {
-    req.session.destroy((err) => {
+    req.session.destroy(err => {
       if (err) {
         return res.redirect("/");
       }
