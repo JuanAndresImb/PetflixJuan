@@ -92,6 +92,8 @@ check.post(
 
       profile.ageRestriction = adultCheck;
 
+      profile.created = true;
+
       await profile.save();
 
       return res.redirect("/profile");

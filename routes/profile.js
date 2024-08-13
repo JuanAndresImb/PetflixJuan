@@ -17,9 +17,16 @@ function asyncHandler(cb) {
 profile.get(
   "/profile",
   asyncHandler(async (req, res) => {
+    console.log(req.session.isLoggedIn);
     const isLoggedIn = req.session.isLoggedIn;
-    if (!isLoggedIn) {
+    if (!isLoggedIn || typeof req.session.register === "string") {
       return res.redirect("/");
+    }
+    if (!req.session.profileSelect) {
+      return res.redirect("/profileselect");
+    }
+    if (req.session.profileNumber != 1) {
+      return res.redirect("/home");
     }
 
     const userNameDB = await Users.findOne({
@@ -110,14 +117,18 @@ profile.post(
 profile.get(
   "/profilecreate",
   asyncHandler(async (req, res) => {
-    const icons = await ProfileIcon.findAll({
-      attributes: ["imgName"],
-      raw: true,
-    });
+    if (typeof req.session.register === "string") {
+      const icons = await ProfileIcon.findAll({
+        attributes: ["imgName"],
+        raw: true,
+      });
 
-    const iconNamesArray = icons.map((icon) => icon.imgName);
+      const iconNamesArray = icons.map((icon) => icon.imgName);
 
-    return res.render("profileCreate", { icons: iconNamesArray });
+      return res.render("profileCreate", { icons: iconNamesArray });
+    }
+
+    return res.redirect("/home");
   })
 );
 
@@ -176,6 +187,13 @@ profile.post(
       created: false,
       userId: userNameDB.id,
     });
+
+    req.session.register = true;
+    req.session.isLoggedIn = true;
+    req.session.userid = userNameDB.username;
+    req.session.profileSelect = true;
+    req.session.profileNumber = 1;
+    return res.redirect("/profile");
   })
 );
 
@@ -183,12 +201,84 @@ profile.post(
 
 profile.get(
   "/profileselect",
-  asyncHandler(async (req, res) => {})
+  asyncHandler(async (req, res) => {
+    const isLoggedIn = req.session.isLoggedIn;
+    if (isLoggedIn) {
+      const userNameDB = await Users.findOne({
+        where: { username: req.session.userid },
+      });
+
+      const profileGetAll = await ProfileUser.findAll({
+        where: { userId: userNameDB.id },
+        include: {
+          model: ProfileIcon,
+          attributes: ["imgName"], // On ne récupère que le champ imgName
+        },
+        raw: true,
+      });
+
+      const profiles = [
+        {
+          id: 1,
+          name: profileGetAll[0].profileName,
+          icon: profileGetAll[0]["ProfileIcon.imgName"],
+          visible: profileGetAll[0].created,
+        },
+        {
+          id: 2,
+          name: profileGetAll[1].profileName,
+          icon: profileGetAll[1]["ProfileIcon.imgName"],
+          visible: profileGetAll[1].created,
+        },
+        {
+          id: 3,
+          name: profileGetAll[2].profileName,
+          icon: profileGetAll[2]["ProfileIcon.imgName"],
+          visible: profileGetAll[2].created,
+        },
+        {
+          id: 4,
+          name: profileGetAll[3].profileName,
+          icon: profileGetAll[3]["ProfileIcon.imgName"],
+          visible: profileGetAll[3].created,
+        },
+      ];
+
+      return res.render("profileSelect", { profiles: profiles });
+    }
+
+    return res.redirect("/");
+  })
 );
 
 profile.post(
   "/profileselect/:id",
-  asyncHandler(async (req, res) => {})
+  asyncHandler(async (req, res) => {
+    console.log(req.body);
+
+    const profileNumber = parseInt(req.params.id.slice(-1)) - 1;
+
+    const userNameDB = await Users.findOne({
+      where: { username: req.session.userid },
+    });
+
+    const profileGetAll = await ProfileUser.findAll({
+      where: { userId: userNameDB.id },
+      include: {
+        model: ProfileIcon,
+        attributes: ["imgName"], // On ne récupère que le champ imgName
+      },
+      raw: true,
+    });
+
+    if (profileGetAll[profileNumber].password == req.body.password) {
+      req.session.profileSelect = true;
+      req.session.profileNumber = profileGetAll[profileNumber].profileNumber;
+      return res.redirect("/home");
+    } else {
+      return res.redirect("/profileselect");
+    }
+  })
 );
 
 module.exports = profile;

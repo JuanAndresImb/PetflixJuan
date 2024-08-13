@@ -240,7 +240,8 @@ input {
   max-height: 100%;
   object-fit: contain;
   width: 100%;
-  height: auto;
+  height: 13vh;
+  width: 10vw;
 }
 
 .newsletterDiv {
@@ -250,7 +251,6 @@ input {
 
 .profileIconBox {
   max-height: 150px;
-  padding-right: 80%;
 }
 
 .profilelogoutBox {
