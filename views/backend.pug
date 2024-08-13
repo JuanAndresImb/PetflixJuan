@@ -31,9 +31,13 @@ html
         p
           | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis et iste hic, animi, rerum facilis ab expedita, quis impedit repellendus delectus suscipit odit similique a.
       section#newsletter.tab-pane.fade(role='tabpanel', aria-labelledby='newsletter-tab')
-        h3 Newsletter
-        p
-          | Contenu de la section Newsletter.
+        section#bloc-newsletter.d-flex.flex-column.align-items-end 
+          textarea(name='newsletter', rows='10', cols='100')
+            | Vous trouverez le contenu dans la newsletter dans le pdf. Enjoy !
+          section#insertFile.my-3
+            label.px-3(for='myfile') Choisir la newsletter 
+            input#myfile(type='file', name='myfile')
+          button.btn.btn-success.w-10 Envoyer
       section#nouveautes.tab-pane.fade(role='tabpanel', aria-labelledby='nouveautes-tab')
         h3 Les nouveautés
         p
