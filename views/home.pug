@@ -21,44 +21,32 @@ html(lang="en")
                         img#profile(src='#' alt="profile")
                     ul 
                         li 
-                            a.profile(href="") Profile
+                            a.profile(href="/profile") Profile
                         li  
                             a.settings(href="") Settings
                         li 
-                            a.logOut(href="") Log out
+                            a.logOut(href="logout") Log out
             
             
                     
              
 
         div(class="main")
+            
             .content#jumbo 
                 h1 New Releases
+            
             h1 My Selection
             .row#mylist
-                
                 .carousel-container
                     button(class="carouselBtn prev") &lt;
                     .carousel-slide
-                        
-                        .panel
-                            .video
-                                
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                  
+                        each video in videos    
+                            .panel
+                                video(src=video.key controls)
+                                h3= video.name
+                                p= video.type
+                                p= video.official  
                     button(class="carouselBtn next") &gt;
 
 
@@ -71,23 +59,10 @@ html(lang="en")
                         
                         .panel
                             .video
-                                
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                     
                   
                     button(class="carouselBtn next") &gt;
+
             h1 display three
             .row#three
                 
@@ -98,22 +73,10 @@ html(lang="en")
                         .panel
                             .video
                                 
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                     
                   
                     button(class="carouselBtn next") &gt;
+
             h1 display four
             .row#four
                 
@@ -124,22 +87,10 @@ html(lang="en")
                         .panel
                             .video
                                 
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                    
                   
                     button(class="carouselBtn next") &gt;
+
             h1 display five
             .row#five
                 .carousel-container
@@ -147,24 +98,10 @@ html(lang="en")
                     .carousel-slide
                         
                         .panel
-                            .video
-                                
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                  
+                            
+                   
                     button(class="carouselBtn next") &gt;
+
             .content#categories
                 .cardContainer
                     .card#Action
@@ -228,14 +165,15 @@ html(lang="en")
                         h3 War
                         img(src='./images/genres/war.jpg', alt='War')
                 .slider-controls
-                     button.prev-btn &lt;
-                     button.next-btn &gt;
+                    button.prev-btn &lt;
+                    button.next-btn &gt;
                      
                     
                     
                
 
-
+  
     script(src="./javascripts/carousel.js")
     script(src="./javascripts/slider.js")
     script(src="./javascripts/search.js")
+

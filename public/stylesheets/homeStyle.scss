@@ -88,6 +88,7 @@ h3 {
 
 .cardContainer:hover .card:not(:hover) {
   filter: blur(2px) grayscale(0.8);
+  transition: 1s ease;
   z-index: 1;
 }
 
