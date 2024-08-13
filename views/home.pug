@@ -11,7 +11,7 @@ html(lang="en")
         div(class="header")
             
             #logo
-                img(src="../public/images/index/logoFull.webp" alt="logo")
+                img(src="./images/index/logoFull.webp" alt="logo")
             #menu
                 input(type="search" class="form-control" placeholder="Search for a movie")
                 button(class="btn") Search
@@ -31,8 +31,10 @@ html(lang="en")
              
 
         div(class="main")
+            
             .content#jumbo 
                 h1 New Releases
+            
             h1 My Selection
             .row#mylist
                 
@@ -40,23 +42,24 @@ html(lang="en")
                     button(class="carouselBtn prev") &lt;
                     .carousel-slide
                         
-                        .panel
-                            .video
-                                
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
-                        .panel
-                        .panel 
-                        .panel
+                        
+                            .panel
+                                .video(controls width="100%")
+                                    
+                            .panel 
+                            .panel
+                            .panel
+                            .panel 
+                            .panel
+                            .panel
+                            .panel 
+                            .panel
+                            .panel
+                            .panel 
+                            .panel
+                            .panel
+                            .panel 
+                            .panel
                   
                     button(class="carouselBtn next") &gt;
 
@@ -87,6 +90,7 @@ html(lang="en")
                         .panel
                   
                     button(class="carouselBtn next") &gt;
+
             h1 display three
             .row#three
                 
@@ -113,6 +117,7 @@ html(lang="en")
                         .panel
                   
                     button(class="carouselBtn next") &gt;
+
             h1 display four
             .row#four
                 
@@ -139,6 +144,7 @@ html(lang="en")
                         .panel
                   
                     button(class="carouselBtn next") &gt;
+
             h1 display five
             .row#five
                 .carousel-container
@@ -146,7 +152,7 @@ html(lang="en")
                     .carousel-slide
                         
                         .panel
-                            .video
+                            
                                 
                         .panel 
                         .panel
@@ -164,6 +170,7 @@ html(lang="en")
                         .panel
                   
                     button(class="carouselBtn next") &gt;
+
             .content#categories
                 .cardContainer
                     .card#Action
