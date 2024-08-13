@@ -88,6 +88,9 @@ app.use(check);
 const profile = require("./routes/profile");
 const { isUtf8 } = require("node:buffer");
 app.use(profile);
+
+const search = require("./routes/search");
+app.use(search);
 // //error traitement
 
 app.use((req, res, next) => {

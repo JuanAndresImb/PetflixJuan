@@ -13,8 +13,9 @@ html(lang="en")
             #logo
                 img(src="./images/index/logoFull.webp" alt="logo")
             #menu
-                input(type="search" class="form-control" placeholder="Search for a movie")
-                button(class="btn") Search
+                .search-container
+                    input#search.search-input(type='text' placeholder='Search...' autocomplete='off')
+                    #suggestions.suggestions-list
                 details 
                     summary 
                         img#profile(src='#' alt="profile")
@@ -237,3 +238,4 @@ html(lang="en")
 
     script(src="./javascripts/carousel.js")
     script(src="./javascripts/slider.js")
+    script(src="./javascripts/search.js")
