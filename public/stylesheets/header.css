@@ -109,6 +109,7 @@ details ul li a {
 
 .search-container:focus {
   border: none;
+  outline-color: #198754;
 }
 
 #search {
@@ -120,7 +121,7 @@ details ul li a {
   width: 100%;
   padding: 8px;
   font-size: 1.2rem;
-  border: 1px solid #6c757d;
+  border: 2px solid #6c757d;
   border-radius: 4px;
 }
 
@@ -135,14 +136,16 @@ details ul li a {
   top: 100%;
   max-height: 150px;
   max-width: 300px;
+  min-width: 300px;
   left: 5px;
-  border: 1.5px solid black;
+  border: 2px solid black;
   border-top: none;
   background-color: #212529;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
   border-radius: 0 0 4px 4px;
   overflow-y: auto;
+  overflow-x: hidden;
   z-index: 1000;
 }
 
