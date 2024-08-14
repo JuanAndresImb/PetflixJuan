@@ -35,9 +35,11 @@ body {
   background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   background-repeat: repeat;
   position: absolute;
+  display: flex;
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -134,12 +136,15 @@ details ul li a {
   border-radius: 4px;
 }
 
-/* .btn {
-  @include darkBg;
-  @include greenItem;
+.button {
+  background-color: #212529;
+  background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
+  background-repeat: repeat;
+  color: #198754;
   border: none;
   font-size: 1.2rem;
-} */
+}
+
 .suggestions-list {
   position: absolute;
   top: 100%;
@@ -177,11 +182,36 @@ footer {
   background-clip: border-box;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
-  position: absolute;
+  position: fixed;
   color: white;
   bottom: 0;
   width: 100%;
-  height: 20rem;
+  height: 1.8rem;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  opacity: 0.7;
+}
+footer nav {
+  opacity: 1;
+  width: 50%;
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+footer p {
+  color: #6c757d;
+  position: absolute;
+  padding: auto;
+  justify-content: end;
+  right: 3rem;
+}
+footer a {
+  color: #198754;
+  align-content: start;
+  text-decoration: none;
+  overflow: hidden;
 }
 
 @font-face {
@@ -327,6 +357,10 @@ video {
 .content .content#categories {
   border: #198754 solid 2px;
   border-radius: 15px;
+}
+
+#categories {
+  margin-bottom: 3rem;
 }
 
 /*  GENRE CARDS */

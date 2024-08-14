@@ -1,0 +1,90 @@
+@import "mixins";
+@import "header";
+
+.main {
+  @include flexInFlex;
+  @include centerFlex;
+  height: auto;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-contact {
+  @include darkBg;
+  @include layoutMargins;
+  @include centerFlex;
+  border-radius: 36px;
+  border: solid 5px #198754;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  top: 5rem;
+  margin-left: auto;
+  height: 80vh;
+  width: 90vw;
+  overflow: hidden;
+  box-shadow: 10px 10px 5px;
+  align-content: space-between;
+}
+
+h2 {
+  @include greenItem;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+form {
+  height: auto;
+  width: 50%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  input,
+  textarea,
+  select {
+    margin: 1rem;
+    @include darkBg;
+    @include greenItem;
+    justify-content: end;
+
+    font-size: 1.2rem;
+    border: 2px solid #6c757d;
+    border-radius: 4px;
+  }
+  #objet {
+    @include darkBg;
+    @include greenItem;
+    padding: 8px;
+    font-size: 1.2rem;
+    border: 2px solid #6c757d;
+    border-radius: 4px;
+    option {
+      padding: 8px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      @include greenItem;
+    }
+    option:hover {
+      @include greenBg;
+      @include darkItem;
+    }
+  }
+  label {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    @include secondaryItem;
+  }
+  .button {
+    @include blackBg;
+    @include greenItem;
+    border: none;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
+
+textarea {
+  width: 100%;
+  left: 0;
+}
