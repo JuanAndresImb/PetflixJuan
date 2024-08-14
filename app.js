@@ -108,7 +108,7 @@ const routes = require("./routes/index");
 app.use(routes);
 
 const homeRoutes = require("./routes/homeRoutes");
-app.use("/", homeRoutes);
+app.use(homeRoutes);
 
 const backend = require("./routes/backend");
 app.use(backend);
