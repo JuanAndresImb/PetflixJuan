@@ -14,27 +14,28 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title PetFlix
-        link(rel="stylesheet", href="../public/stylesheets/filmStyle.css", type="text/css")
-
-    body 
+        link(rel="stylesheet", href="./stylesheets/homeStyle.css", type="text/css")
+        link(rel="stylesheet", href="./stylesheets/header.css", type="text/css")
+   
+    body
         div(class="header")
             
             #logo
-                img(src="../public/images/index/logoFull.webp" alt="logo")
+                img(src="./images/index/logoFull.webp" alt="logo")
             #menu
-                
-                input(type="search" class="form-control" placeholder="Search for a movie")
-                button(class="btn") Search
+                .search-container
+                    input#search.search-input(type='text' placeholder='Search...' autocomplete='off')
+                    #suggestions.suggestions-list
                 details 
                     summary 
-                        img#profile(src='' alt="profile")
+                        img#profile(src='#' alt="profile")
                     ul 
                         li 
-                            a.profile(href="") Profile
+                            a.profile(href="/profile") Profile
                         li  
                             a.settings(href="") Settings
                         li 
-                            a.logOut(href="") Log out
+                            a.logOut(href="logout") Log out
         main
             .movie(src="#") 
                 section.moviePoster
@@ -58,5 +59,6 @@ html(lang="en")
                         | il etait une fois dans un plus long texte
 
                     .info#genreT #{genre}
+                    
     script(src="https://kit.fontawesome.com/5f411ae6ac.js" crossorigin="anonymous")
-    script(src="../routes/apiFetch.js")
+    

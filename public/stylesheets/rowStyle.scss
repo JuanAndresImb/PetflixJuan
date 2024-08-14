@@ -3,7 +3,7 @@
 /* CATALOGUE ROWS */
 h1 {
   @include greenItem;
-  top: 3.5rem;
+  top: 2.7rem;
   font-size: 2rem;
   position: relative;
   white-space: nowrap;
@@ -93,7 +93,7 @@ h1 {
   padding: 10px;
 }
 
-.panel__video {
+video {
   width: 100%;
   padding-top: calc(9 / 16 * 100%);
 }

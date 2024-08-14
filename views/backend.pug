@@ -29,10 +29,11 @@ html
       section#home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
         h3 Bienvenue sur l'espace Administrateur
         p
-          | Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis et iste hic, animi, rerum facilis ab expedita, quis impedit repellendus delectus suscipit odit similique a.
+          | Depuis cet espace administrateur, vous pourrez notamment ajouter de nouveaux films sur la page principale de getflix, gérer les contenus, envoyer des newsletters, et répondre aux différentes plaintes clients.
+          | Enfin, vous aurez également la possibilité de gérer l'interface liées au profil des gens, et accéder à la bade de données client.
       section#newsletter.tab-pane.fade(role='tabpanel', aria-labelledby='newsletter-tab')
         section#bloc-newsletter.d-flex.flex-column.align-items-end 
-          textarea(name='newsletter', rows='10', cols='100')
+          textarea.p-2(name='newsletter', rows='10', cols='100')
             | Vous trouverez le contenu dans la newsletter dans le pdf. Enjoy !
           section#insertFile.my-3
             label.px-3(for='myfile') Choisir la newsletter 
@@ -44,7 +45,8 @@ html
           | Contenu de la section Les nouveautés.
           form.d-flex.justify-content.start.align-items-center(action="/backend" method="POST")
             label.px-3.py-1(for="rechercheFilm") Trouver un film
-            input(type="text" name="rechercheFilm" id="rechercheFilm")
+            //- input#search.search-input(type='text' placeholder='Search...' autocomplete='off')
+            //-         #suggestions.suggestions-list
             button.btn.btn-success.px-3.py-1.mx-3.border.border-rounded(type="submit") Ajouter au carousel
         table 
           thead

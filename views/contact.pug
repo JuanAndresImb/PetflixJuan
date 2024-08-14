@@ -1,0 +1,50 @@
+doctype html
+
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title PetFlix
+        link(rel="stylesheet", href="./stylesheets/contact.css", type="text/css")
+   
+    body
+        header
+            
+            #logo
+                img(src="./images/index/logoFull.webp" alt="logo")
+            #menu
+                .search-container
+                    input#search.search-input(type='text' placeholder='Search...' autocomplete='off')
+                    #suggestions.suggestions-list
+                details 
+                    summary 
+                        img#profile(src='#' alt="profile")
+                    ul 
+                        li 
+                            a.profile(href="/profile") Profile
+                        li  
+                            a.settings(href="") Settings
+                        li 
+                            a.logOut(href="logout") Log out
+            
+        main
+            div(class="container-contact")
+                h2 Formulaire de contact
+                form(action="contact", method='POST')
+                    label(for='fname') Votre nom :
+                        input#fname(type='text' name='fname')
+
+                    label(for='fmail') Votre adresse mail:
+                        input#fname(type='email' name='fmail')
+                    
+                    label(for='objet') Vous nous contactez pour :
+                        select#objet(name='objet')
+                            option(value='information') Obtenir des informations
+                            option(value='plaintes') Formuler une plainte
+                            option(value='autre') Pour d&apos;autres informations
+
+                    textarea.p-2(name='contact', rows='10', cols='100')
+                        | Votre message 
+                
+                    button.button Envoyer
+
