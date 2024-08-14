@@ -30,20 +30,20 @@ html(lang="en")
         main
             div(class="container-contact")
                 h2 Formulaire de contact
-                form(action="contact", method='POST')
+                form(action="/contact", method='POST')
                     label(for='fname') Votre nom :
                         input#fname(type='text' name='fname')
 
                     label(for='fmail') Votre adresse mail:
                         input#fname(type='email' name='fmail')
                     
-                    label(for='objet') Vous nous contactez pour :
-                        select#objet(name='objet')
+                    label(for='fobjet') Vous nous contactez pour :
+                        select#objet(name='fobjet')
                             option(value='information') Obtenir des informations
                             option(value='plaintes') Formuler une plainte
                             option(value='autre') Pour d&apos;autres informations
 
-                    textarea.p-2(name='contact', rows='10', cols='100')
+                    textarea.p-2(name='fmessage', rows='10', cols='100')
                         | Votre message 
                 
                     button.button Envoyer
