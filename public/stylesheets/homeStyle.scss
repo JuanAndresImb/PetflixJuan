@@ -38,31 +38,32 @@
   position: relative;
   display: flex;
   height: 40rem;
-  width: calc(11rem * 8 + 1rem * 7);
-  margin: auto;
-  box-sizing: border-box;
+  width: calc(100% - 8rem);
+  margin: 0 4rem;
   text-align: center;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  overflow-x: hidden;
+  overflow: hidden;
   .card {
-    position: absolute;
+    position: relative;
     display: inline-block;
     flex-direction: column;
+    flex: 1;
     border: none;
-    box-shadow: 10px 10px 5px;
-    border-radius: 15px;
-    top: auto;
     cursor: pointer;
-    padding: auto;
-    min-width: 11rem;
-    height: 35rem;
+    height: 40rem;
+    max-width: calc(100% / 9);
+    min-width: 0;
+    margin: 0;
+    padding: 0;
     white-space: nowrap;
+    overflow: hidden;
     z-index: 1;
     transition: 1s ease;
     :hover {
       z-index: 10;
-      transform: scaleX(1.3) scaleY(1.05);
+      transform: scaleX(1.4) scaleY(1);
+      box-shadow: 10px 10px 5px;
     }
   }
   h3 {
@@ -82,7 +83,7 @@
 
 .card:hover img,
 h3 {
-  transform: scalex(1.1) scaleY(1.1);
+  transform: scalex(1.1) scaleY(1);
   z-index: 10;
 }
 
@@ -102,6 +103,7 @@ h3 {
   margin: auto;
   border: none;
   box-sizing: content-box;
+
   button {
     @include blackBg;
     @include secondaryItem;
@@ -113,6 +115,7 @@ h3 {
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
     padding: 5px 20px;
+    z-index: 5;
     &:hover {
       @include greenBg;
       @include darkItem;

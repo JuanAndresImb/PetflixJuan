@@ -47,7 +47,7 @@ updatePanels();
 
 document.addEventListener("DOMContentLoaded", () => {
   const videoContainer = document.querySelector(".panel");
-  const video = document.querySelector(".video");
+  const video = document.querySelector(video);
 
   videoContainer.addEventListener("mouseover", () => {
     video.play(); // Start playing the video on hover
