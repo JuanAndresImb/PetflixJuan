@@ -71,15 +71,15 @@ app.use(express.json());
 app.use(express.static("public")); // pour les images , fichiers static
 
 app.set("view engine", "pug");
-app.set('views', './views');
+app.set("views", "./views");
 
 //les pages dans le dossier routes
 
-const homeRoutes = require('./routes/homeRoutes');
-app.use('/', homeRoutes);
-
 const routes = require("./routes/index");
 app.use(routes);
+
+const homeRoutes = require("./routes/homeRoutes");
+app.use("/", homeRoutes);
 
 const backend = require("./routes/backend");
 app.use(backend);
@@ -89,8 +89,6 @@ app.use(testing);
 
 const check = require("./routes/check");
 app.use(check);
-
-
 
 const profile = require("./routes/profile");
 const { isUtf8 } = require("node:buffer");
