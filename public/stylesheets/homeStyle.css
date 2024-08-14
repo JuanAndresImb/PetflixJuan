@@ -38,6 +38,7 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 /* HEADER */
@@ -171,17 +172,30 @@ details ul li a {
 }
 
 /* FOOTER */
-footer {
+.footer {
   background-color: #000;
   background-origin: border-box;
   background-clip: border-box;
   background-image: url("https://www.transparenttextures.com/patterns/black-mamba.png");
   background-repeat: repeat;
-  position: absolute;
+  position: fixed;
   color: white;
   bottom: 0;
   width: 100%;
-  height: 20rem;
+  height: 1.8rem;
+  z-index: 11;
+  display: flex;
+}
+.footer nav {
+  width: 50%;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+}
+.footer nav a {
+  color: #198754;
+  text-decoration: none;
+  overflow: hidden;
 }
 
 @font-face {
@@ -327,6 +341,10 @@ video {
 .content .content#categories {
   border: #198754 solid 2px;
   border-radius: 15px;
+}
+
+#categories {
+  margin-bottom: 3rem;
 }
 
 /*  GENRE CARDS */
