@@ -135,7 +135,7 @@ router.post(
 router.get(
   "/logout",
   asyncHandler(async (req, res) => {
-    req.session.destroy(err => {
+    req.session.destroy((err) => {
       if (err) {
         return res.redirect("/");
       }
@@ -148,7 +148,7 @@ router.get(
 router.post(
   "/logout",
   asyncHandler(async (req, res) => {
-    req.session.destroy(err => {
+    req.session.destroy((err) => {
       if (err) {
         return res.redirect("/");
       }
@@ -158,18 +158,18 @@ router.post(
   })
 );
 
-router.get(
-  "/home",
-  asyncHandler(async (req, res) => {
-    const isLoggedIn = req.session.isLoggedIn;
-    if (!isLoggedIn || typeof req.session.register === "string") {
-      return res.redirect("/");
-    }
-    if (!req.session.profileSelect) {
-      return res.redirect("/profileselect");
-    }
-    return res.render("home");
-  })
-);
+// router.get(
+//   "/home",
+//   asyncHandler(async (req, res) => {
+//     const isLoggedIn = req.session.isLoggedIn;
+//     if (!isLoggedIn || typeof req.session.register === "string") {
+//       return res.redirect("/");
+//     }
+//     if (!req.session.profileSelect) {
+//       return res.redirect("/profileselect");
+//     }
+//     return res.render("home");
+//   })
+// );
 
 module.exports = router;
