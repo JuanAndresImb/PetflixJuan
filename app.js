@@ -90,6 +90,8 @@ app.use(testing);
 const check = require("./routes/check");
 app.use(check);
 
+const contact = require("./routes/contact");
+app.use(contact);
 
 
 const profile = require("./routes/profile");
