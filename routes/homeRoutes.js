@@ -5,7 +5,7 @@ const { videos } = require("../models");
 // Route to fetch videos for carousel
 router.get("/", async (req, res) => {
   try {
-    console.log("Home route hit");
+    console.log(videos);
     const videoList = await videos.findAll({
       order: [["id", "DESC"]],
       limit: 4,
