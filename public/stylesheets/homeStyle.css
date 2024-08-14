@@ -350,7 +350,7 @@ video {
   cursor: pointer;
   height: 40rem;
   max-width: 11.1111111111%;
-  min-width: 0;
+  min-width: 11.1111111111%;
   margin: 0;
   padding: 0;
   white-space: nowrap;
