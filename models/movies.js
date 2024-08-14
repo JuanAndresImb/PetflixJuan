@@ -1,7 +1,11 @@
 const Sequelize = require("sequelize");
 
 module.exports = (sequelize) => {
-  class Movies extends Sequelize.Model {}
+  class Movies extends Sequelize.Model {
+    static associate(models) {
+      Movies.hasMany(models.MoviesByGenre, { foreignKey: "idDbMovie" });
+    }
+  }
   Movies.init(
     {
       idMovies: {
