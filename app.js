@@ -13,8 +13,8 @@ const {
   ProfileUser,
   ProfileIcon,
   Movies,
-  videos,
   MoviesByGenre,
+  Videos,
 } = require("./models");
 
 const genreMapping = {
@@ -66,6 +66,11 @@ const genreMapping = {
     const moviesGenreTemp = require("./JSONData/MoviesByGenresTemp.json");
     for (const object of moviesGenreTemp) {
       await MoviesByGenre.create(object);
+    }
+
+    const videosTemp = require("./JSONData/videosTemp.json");
+    for (const object of videosTemp) {
+      await Videos.create(object);
     }
 
     console.log("Database synchronized successfully.");
