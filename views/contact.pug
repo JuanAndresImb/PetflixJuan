@@ -8,24 +8,11 @@ html(lang="en")
         link(rel="stylesheet", href="./stylesheets/contact.css", type="text/css")
    
     body
-        header
+        .header
             
             #logo
                 img(src="./images/index/logoFull.webp" alt="logo")
-            #menu
-                .search-container
-                    input#search.search-input(type='text' placeholder='Search...' autocomplete='off')
-                    #suggestions.suggestions-list
-                details 
-                    summary 
-                        img#profile(src='#' alt="profile")
-                    ul 
-                        li 
-                            a.profile(href="/profile") Profile
-                        li  
-                            a.settings(href="") Settings
-                        li 
-                            a.logOut(href="logout") Log out
+            
             
         main
             div(class="container-contact")
@@ -48,3 +35,9 @@ html(lang="en")
                 
                     button.button Envoyer
 
+        footer
+            
+            nav
+                a(href="https://github.com/KarlVand/Petflix" target="blank") Github
+                a(href="/contact") Nous contacter
+                a(href="#") Confidentialité
