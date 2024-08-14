@@ -5,10 +5,10 @@
   { "imgName": "icon04.png", "imgLink": "./images/animal_icon/icon04.png" },
   { "imgName": "icon05.png", "imgLink": "./images/animal_icon/icon05.png" },
   { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon06.png" },
-  { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon07.png" },
-  { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon08.png" },
-  { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon09.png" },
-  { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon10.png" },
-  { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon11.png" },
-  { "imgName": "icon06.png", "imgLink": "./images/animal_icon/icon12.png" }
+  { "imgName": "icon07.png", "imgLink": "./images/animal_icon/icon07.png" },
+  { "imgName": "icon08.png", "imgLink": "./images/animal_icon/icon08.png" },
+  { "imgName": "icon09.png", "imgLink": "./images/animal_icon/icon09.png" },
+  { "imgName": "icon10.png", "imgLink": "./images/animal_icon/icon10.png" },
+  { "imgName": "icon11.png", "imgLink": "./images/animal_icon/icon11.png" },
+  { "imgName": "icon12.png", "imgLink": "./images/animal_icon/icon12.png" }
 ]
